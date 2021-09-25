@@ -1,0 +1,9 @@
+Package: com.lyvendia.ytspeed
+Name: YTSpeed
+Version: 1.0.1
+Architecture: iphoneos-arm
+Description: Makes YouTube Videos speedy.
+Maintainer: lyvendia
+Author: lyvendia
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
