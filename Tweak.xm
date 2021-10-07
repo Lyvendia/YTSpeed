@@ -14,6 +14,7 @@
 
 
 @interface MLHAMQueuePlayer : NSObject
+@property id playerEventCenter;
 @property id delegate;
 - (void)setRate:(float)rate;
 - (void)internalSetRate;
@@ -113,8 +114,7 @@
 	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
 	[stickySettings setRate: rate];
 
-	id playerEventCenter = MSHookIvar<MLPlayerEventCenter *>(self, "_playerEventCenter");
-	[playerEventCenter broadcastRateChange: rate];
+	[self.playerEventCenter broadcastRateChange: rate];
 
 	YTSingleVideoController *singleVideoController = self.delegate;
 	[singleVideoController playerRateDidChange: rate];
